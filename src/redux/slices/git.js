@@ -4,7 +4,7 @@ import axios from '../../utils/axios';
 const initialState = {
     isLoading: false,
     error: false,
-    stats: [],
+    gitData: [],
     errorMessage: '',
 };
 
@@ -19,21 +19,22 @@ const slice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
           },
-        getStatsSucces(state, action) {
+        getGitDataSucces(state, action) {
             state.isLoading = false;
-            state.stats = action.payload;
+            state.gitData = action.payload;
         }
     }
 })
 
 export default slice.reducer;
 
-export function getStats() {
+export function getGitData() {
     return async (dispatch) => {
       dispatch(slice.actions.startLoading());
       try {
         const response = await axios.get('https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc');
-        dispatch(slice.actions.getStatsSucces(response.data.stats));
+        const gitData = response.data;
+        dispatch(slice.actions.getGitDataSucces({gitData}));
       } catch (error) {
         dispatch(slice.actions.hasError(error));
       }

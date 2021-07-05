@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Typography, CssBaseline, Avatar, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useSelector, useDispatch } from 'react-redux';
+import { getGitData } from '../redux/slices/git';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -9,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         padding: 25,
-
     },
     square: {
       color: 'white',
@@ -35,26 +36,32 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Main() {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const { gitData } = useSelector((state) => state.git)
+    useEffect(() => {
+        dispatch(getGitData())
+    }, [dispatch])
     return (
         <React.Fragment>
           <CssBaseline />
+          {gitData.map((data, index) => (
             <Box
               display="flex"
               alignItems="flex-start"    
               p={1}
               m={1}
               className={classes.root}
+              key={index}
               >
             <Avatar variant="square" className={classes.square}>
-                N
+                {data.owner}
             </Avatar>
-
            <Box className={classes.content}>
               <Typography variant="h4" gutterBottom>
-                Repository Name
+                {data.name}
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
-                  Repository Description
+                 {data.description}
               </Typography>
               <Box
                 display="flex"
@@ -65,8 +72,10 @@ export default function Main() {
                 css={{ height: 100 }}
                 >
                   <Box display="flex" className={classes.box1}>
+                      stars : {data.stargazers_count}
                   </Box>
                   <Box  display="flex" className={classes.box2}>
+                      Number of issues : {data.open_issues}
                   </Box>
                   <Typography variant="subtitle1" gutterBottom>
                       Repository Description
@@ -74,6 +83,8 @@ export default function Main() {
                 </Box>
               </Box>
             </Box>
+          ))
+        }
         </React.Fragment>
     )
 }
