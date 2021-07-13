@@ -37,21 +37,22 @@ const useStyles = makeStyles((theme) => ({
 export default function Main() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const { gitData } = useSelector((state) => state.git)
+    const { pureData } = useSelector((state) => state.git)
     useEffect(() => {
         dispatch(getGitData())
     }, [dispatch])
+    console.log(pureData)
     return (
         <React.Fragment>
           <CssBaseline />
-          {gitData.map((data, index) => (
+          {pureData.map((data) => (
             <Box
               display="flex"
               alignItems="flex-start"    
               p={1}
               m={1}
               className={classes.root}
-              key={index}
+              key={data.id}
               >
             <Avatar variant="square" className={classes.square}>
                 {data.owner}
