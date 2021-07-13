@@ -3,6 +3,7 @@ import { Typography, CssBaseline, Avatar, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGitData } from '../redux/slices/git';
+import Moment from 'react-moment';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,24 +46,22 @@ export default function Main() {
     return (
         <React.Fragment>
           <CssBaseline />
-          {Object.entries(pureData).map((data) => (
+          {Object.entries(pureData).map((data, index) => (
             <Box
               display="flex"
               alignItems="flex-start"    
               p={1}
               m={1}
               className={classes.root}
-              key={data.id}
+              key={index}
               >
-            <Avatar variant="square" className={classes.square}>
-                {data.owner}
-            </Avatar>
+            <Avatar variant="square" src={data[1].owner.avatar_url} className={classes.square}/>
            <Box className={classes.content}>
               <Typography variant="h4" gutterBottom>
-                {data.name}
+                {data[1].name}
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
-                 {data.description}
+                 {data[1].description}
               </Typography>
               <Box
                 display="flex"
@@ -73,13 +72,13 @@ export default function Main() {
                 css={{ height: 100 }}
                 >
                   <Box display="flex" className={classes.box1}>
-                      stars : {data.stargazers_count}
+                      stars : {data[1].stargazers_count}
                   </Box>
                   <Box  display="flex" className={classes.box2}>
-                      Number of issues : {data.open_issues}
+                      issues : {data[1].open_issues}
                   </Box>
                   <Typography variant="subtitle1" gutterBottom>
-                      Repository Description
+                      this repo was last time updated <Moment fromNow>{data[1].updated_at}</Moment>.
                   </Typography>
                 </Box>
               </Box>
