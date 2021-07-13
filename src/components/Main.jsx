@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         padding: 25,
         margin: 25,
-        width: 800,
+        width: 1000,
     },
     square: {
       color: 'white',
@@ -21,8 +21,9 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       backgroundColor: '#bdbdbd',
       padding: 15,
-      width: 125,
-      borderRadius: 7
+      width: 150,
+      borderRadius: 7,
+      border: 'solid black'
     },
     box2: {
       color: 'black',
@@ -30,8 +31,9 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 10,
       marginLeft: 10,
       padding: 15,
-      width: 125,
-      borderRadius: 7
+      width: 150,
+      borderRadius: 7,
+      border: 'solid black'
     },
   }));
 
@@ -57,7 +59,7 @@ export default function Main() {
                 <Grid xs={4}>
                   <Avatar variant="square" src={data[1].owner.avatar_url} className={classes.square}/>
                 </Grid>
-                <Grid xs={8} p={25}>
+                <Grid xs={8}>
                   <Typography variant="h4" gutterBottom>
                     {data[1].name}
                   </Typography>
