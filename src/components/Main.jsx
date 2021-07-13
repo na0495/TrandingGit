@@ -45,7 +45,7 @@ export default function Main() {
     return (
         <React.Fragment>
           <CssBaseline />
-          {pureData.map((data) => (
+          {Object.entries(pureData).map((data) => (
             <Box
               display="flex"
               alignItems="flex-start"    
