@@ -1,7 +1,15 @@
-# Getting Started with Create React App
+# The goal of this project :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Small webapp that will list the most starred Github repos that were created in the last 30 days. this app will be fetching the sorted JSON data directly from the Github API.
 
+# Technologie :
+
+This project was made with ![React](https://img.shields.io/badge/React-20232A?style=plastic&logo=react&logoColor=61DAFB)&nbsp;
+![Redux](https://img.shields.io/badge/Redux-593D88?style=plastic&logo=redux&logoColor=white)&nbsp; and deployed by ![NETLIFY](https://img.shields.io/badge/Netlify-00C7B7?style=plastic&logo=netlify&logoColor=white)&nbsp;
+
+# Demo :
+
+You can check out the demo which is deployed with netlify : https://trandingit.netlify.app/
 ## Available Scripts
 
 In the project directory, you can run:
