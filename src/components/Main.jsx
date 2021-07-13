@@ -81,7 +81,7 @@ export default function Main() {
                           issues : {data[1].open_issues}
                       </Box>
                       <Typography variant="subtitle1" gutterBottom>
-                          this repo was last time updated <Moment fromNow>{data[1].updated_at}</Moment>.
+                          this repo was last time updated <Moment fromNow>{data[1].updated_at}</Moment> by {data[1].owner.login} .
                       </Typography>
                   </Box>
                 </Grid>
