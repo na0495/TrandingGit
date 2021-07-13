@@ -1,15 +1,20 @@
-# The goal of this project :
+## The goal of this project :
 
 Small webapp that will list the most starred Github repos that were created in the last 30 days. this app will be fetching the sorted JSON data directly from the Github API.
 
-# Technologie :
+## Technologie :
 
 This project was made with ![React](https://img.shields.io/badge/React-20232A?style=plastic&logo=react&logoColor=61DAFB)&nbsp;
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=plastic&logo=redux&logoColor=white)&nbsp; and deployed by ![NETLIFY](https://img.shields.io/badge/Netlify-00C7B7?style=plastic&logo=netlify&logoColor=white)&nbsp;
 
-# Demo :
+## Demo :
 
 You can check out the demo which is deployed with netlify : https://trandingit.netlify.app/
+
+## Wakatime State:
+
+na0495 working time on the project [![wakatime](https://wakatime.com/badge/github/na0495/DevTeam-ShipColis.svg)](https://wakatime.com/badge/github/na0495/TrandingGit)
+
 ## Available Scripts
 
 In the project directory, you can run:
