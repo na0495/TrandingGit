@@ -13,7 +13,7 @@ You can check out the demo which is deployed with netlify : https://trandingit.n
 
 ## Wakatime State:
 
-na0495 working time on the project [![wakatime](https://wakatime.com/badge/github/na0495/DevTeam-ShipColis.svg)](https://wakatime.com/badge/github/na0495/TrandingGit)
+na0495 working time on the project [![wakatime](https://wakatime.com/badge/github/na0495/TrandingGit.svg)](https://wakatime.com/badge/github/na0495/TrandingGit)
 
 ## Available Scripts
 
