@@ -11,10 +11,6 @@ This project was made with ![React](https://img.shields.io/badge/React-20232A?st
 
 You can check out the demo which is deployed with netlify : https://trandingit.netlify.app/
 
-## Wakatime State:
-
-na0495 working time on the project [![wakatime](https://wakatime.com/badge/github/na0495/TrandingGit.svg)](https://wakatime.com/badge/github/na0495/TrandingGit)
-
 ## Available Scripts
 
 In the project directory, you can run:
